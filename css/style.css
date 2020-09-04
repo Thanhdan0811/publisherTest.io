@@ -1,0 +1,500 @@
+@charset : utf-8;
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean');
+* {margin: 0; padding: 0;}
+        body {font:14px /1.9 'Noto Sans KR', sans-serif, 'Sans KR', '나눔바른고딕', nanumbarungothic, se_NanumBarunGothic, AppleSDGothicNeo, simhei; color:#777;}
+        li {list-style: none;}
+        a {text-decoration: none; color:inherit;}
+              
+        .wrap {margin: 20px auto; padding :0 10px; max-width:850px; box-sizing: border-box;}
+        .wrap .bread {font-size: 13px;}
+
+/******************************* 마이페이지 첫 화면 *******************************/
+
+        /* 공지사항 notice ******************************/        
+        .wrap .mypage_notice {margin-bottom: 30px;}        
+        .wrap .mypage_notice .notice_cont {background: #e3f2fd; padding:10px; border:1px solid #bbdefb;}
+        .wrap .mypage_notice .notice_cont .orderNum,
+        .wrap .mypage_notice .notice_cont .applyDate {margin-right: 20px; color:#000; font-weight: bold;}
+        /* 공지사항 */
+        .wrap .mypage_notice .notice_cont i.fa-question-circle {position: relative; cursor: pointer;}
+        .wrap .mypage_notice .notice_cont i.fa-question-circle .explan {display: none; position: absolute; left:0; top: 15px; padding: 10px; width:350px; background: #fff; border:1px solid #999; font-size: 12px; font-weight: 100; z-index: 1;}
+        .wrap .mypage_notice .notice_cont i.fa-question-circle .explan .exTitle {padding: 10px 0;  border-bottom: 1px solid #888; color: #000; font-weight: bold; }
+        .wrap .mypage_notice .notice_cont i.fa-question-circle .explan .exCont {padding: 10px 0; line-height: 1.8;}
+        .wrap .mypage_notice .notice_cont i.fa-question-circle:hover .explan{display: block;}
+
+        /* 진행상황 status ******************************/
+        .wrap .status {display: flex; margin-bottom: 30px;}
+        .wrap .status div { /*outline: 1px dotted red;*/}
+        .wrap .status .inStatus {display: flex; align-items: center; justify-content: space-between; width:100%; height:85px; background: #4285f4; color:#fff;}        
+        .wrap .status .inStatus .title {flex: 1 1 120px; text-align: center; border-right:1px solid #90baff;}
+        .wrap .status .inStatus .locate {flex: 1 0 100px; text-align: center; line-height: 1.3em;}
+        .wrap .status .inStatus .locate .small {display: block; font-size: 11px; color:#91d4ff;}
+        .wrap .status .inStatus .locate .start {display: block; font-size:13px; font-weight: 100;}
+        .wrap .status .inStatus .locate .arrive {display: block; font-size:13px; font-weight: 100;}
+        .wrap .status .inStatus .current {position: relative; flex: 1 1 580px; display: flex; align-items: center;}
+        .wrap .status .inStatus .current .startcircle,
+        .wrap .status .inStatus .current .endcircle {width:10px; height:10px; border:2px solid #fff; border-radius: 50%; background: #4285f4; z-index: 1;}
+        .wrap .status .inStatus .current .currentStatus {display: inline-block; margin: 0 auto; padding: 5px 20px; background: #fff; text-align: center; border-radius: 30px; color:#000; font-weight: bold;  z-index: 2;}
+        .wrap .status .inStatus .current .bar {position: absolute; left:50%; top:50%; transform: translate(-50%, -50%); width:100%; height: 4px; background: #fff;}
+        .wrap .status .arrow {}
+
+        /* 진행단계 step ******************************/
+        .contents {}
+        .contents .step_style {position: relative; margin-bottom: 10px; padding: 15px; border:1px solid #4285f4; border-radius: 5px; transition: all 0.2s;}
+        .contents .step_style:hover {box-shadow: 0 1px 2px 0 rgba(60,64,67,0.30), 0 2px 6px 2px rgba(60,64,67,0.15);}
+
+        .contents .step_style .step_group {display: flex; flex-wrap: wrap; align-items: center;}        
+        .contents .step_style .step_group .step_title {flex: 0 1 90px; margin-right: 15px; padding: 5px 0; box-sizing: border-box; width:80px; /*height: 60px;*/ border-radius: 5px; border:1px solid #ccc; text-align: center; transition: all 0.2s;}
+        .contents .step_style:hover .step_grp .step_title {border:1px solid #2c65ff;}    
+        .contents .step_style .step_group .step_title .step_txt1 {display: block; color:#2c65ff;}
+        .contents .step_style .step_group .step_title .step_txt2 {display: block; color:#000;}        
+
+        .contents .step_style .step_group .step_list {margin-left: 20px;}
+        .contents .step_style .step_group .step_list ul {}
+        .contents .step_style .step_group .step_list ul li {list-style-image: url(../images/dot.png);}          
+        .contents .step_style .step_group .step_list ul li a {display: block;}  
+        .contents .step_style .step_group .step_list ul li a:hover {color:#000;}
+        .contents .step_style .step_group .step_list ul li a .subtitle {color:#000;}
+        .contents .step_style .step_group .step_list ul li a .startAddr {}
+        .contents .step_style .step_group .step_list ul li a .endAddr {}
+        .contents .step_style .step_group .step_list ul.package {}
+        .contents .step_style .step_group .step_list ul.package li {}
+        .contents .step_style .step_group .step_list ul.package li a {}
+        .contents .step_style .step_group .step_list ul.package li a .p_fedex_qty {}
+        .contents .step_style .step_group .step_list ul.package li a .p_dw_qty {}
+        .contents .step_style .step_group .step_list ul.package li a .p_label_qty {}
+        .contents .step_style .step_group .step_list ul.package li a .p_poutch_qty {margin-right: 10px;}
+        .contents .step_style .step_group .step_list ul.package li a .p_peparing {display: inline-block; padding:0 3px; border-radius: 3px; background:#E6AE05; color:#fff; font-size: 11px;}
+        .contents .step_style .step_group .step_list ul.package li a .p_shipping {display: inline-block; padding:0 3px; border-radius: 3px; background:#4285f4; color:#fff; font-size: 11px;}
+        .contents .step_style .step_group .step_list ul.package li a .p_completed {display: inline-block; padding:0 3px; border-radius: 3px; background:#47a447; color:#fff; font-size: 11px;}
+
+        .contents .step_style .step_group .step_list ul.package li a .fedex_qty {}
+        .contents .step_style .step_group .step_list ul.package li a .dw_qty {}
+        .contents .step_style .step_group .step_list ul.package li a .normalbox_qty {}
+        .contents .step_style .step_group .step_list ul.package li a .carrier_qty {}
+
+        .contents .step_style .step_group .step_list ul.package li a .shippingForm {color:#000;}
+        .contents .step_style .step_group .step_list ul.package li a .shippingDate {}
+
+        .contents .step_style .step_group .step_list ul.payment {}
+        .contents .step_style .step_group .step_list ul.payment li {}
+        .contents .step_style .step_group .step_list ul.payment li a {}
+        .contents .step_style .step_group .step_list ul.payment li a .paymentDate {margin-right: 10px;}
+        .contents .step_style .step_group .step_list ul.payment li a .paymentAmount {}
+        .contents .step_style .step_group .step_list ul.payment li a .paymentStatus {display: inline-block; padding:0 3px; border-radius: 3px; background:#47a447; color:#fff; font-size: 11px;}
+
+    /* 해야할 일 */
+        .contents .step_style .step_list .toDo {}
+        .contents .step_style .step_list .toDo a {display: inline-block; padding: 0 10px;
+            background: #ffeaea; border-radius: 30px; border: 1px solid #ff667a; font-size: 0.9em;
+            color: red; transition: all 0.2s}
+        .contents .step_style .step_list .toDo a:hover {background: #fff;}
+
+
+
+        /* 수정/자세히 보기(설명링크) 아이콘  */
+        .contents .step_style .step_descript {display: flex; position: absolute; top:15px; right:15px; text-align: right;}
+        .contents .step_style .step_descript .step_icon {margin: 5px;}
+        .contents .step_style .step_descript .step_icon a {position: relative;}
+        .contents .step_style .step_descript .step_icon a .fas {padding: 5px; border-radius: 50%; font-size: 16px; color:#4b525c; background: #7d8590; transition: all 0.2s;}
+        .contents .step_style:hover .step_descript .step_icon a .fas {background: #eee;}        
+        .contents .step_style .step_descript .step_icon a .modify,
+        .contents .step_style .step_descript .step_icon a .detail {display: none; position: absolute; left:50%; top:20px; transform: translate(-50%,0); padding: 3px 8px; background: #4b525c; font-size: 12px; color:#f9f9f9; transition: all 0.2s; text-align: center;}
+        .contents .step_style .step_descript .step_icon a .modify,
+        .contents .step_style .step_descript .step_icon a .detail {width:60px;}
+        .contents .step_style .step_descript .step_icon:hover .fas + .modify,        
+        .contents .step_style .step_descript .step_icon:hover .fas + .detail{display: block;}
+
+
+        /* 취소하기 */
+        .contents .cancel {margin-top: 30px; text-align: right;}
+        .contents .cancel a {display: inline-block; padding: 3px 15px; border-radius: 30px; border:1px solid #ccc; transition: all 0.2s;}
+        .contents .cancel a:hover {display: inline-block; background: #FA341E; color:#fff;}
+
+    /******************************* 마이페이지 > 주소정보 addrInfo *******************************/
+        .addrInfo {}
+
+        .addrInfo .contents {}        
+        .addrInfo .contents i.fa-question-circle {color:#cdd2db;}
+        .addrInfo .contents .groupAddr {display: flex; margin-top: 10px; justify-content: space-between; flex-wrap: wrap;}
+
+        /* 공통부분 */
+        .addrInfo .contents .groupAddr h4 {margin-bottom: 20px; padding: 5px; box-sizing: border-box; border-radius: 5px; background: #4285f4; color:#fff;}
+        .addrInfo .contents .groupAddr .inputArea div {padding: 5px 0;}
+        .addrInfo .contents .groupAddr .inputArea .inputBox input {padding:8px; width:250px; background: #fff;  border-radius: 5px; border:1px solid #ccc;}
+        .addrInfo .contents .groupAddr .inputArea .selectBox select {padding:8px; background: #e7f5f9;  border-radius: 5px; border:1px solid #ccc;}
+        /* 공통부분 끝 */
+
+        /* 발송주소 시작 */
+        .addrInfo .contents .groupAddr .shppingAddr {flex:1 1 0; margin:0 5px;}
+        .addrInfo .contents .groupAddr .shppingAddr .inputArea {}
+    
+        .addrInfo .contents .groupAddr .shppingAddr .inputArea .inputBox label, 
+        .addrInfo .contents .groupAddr .shppingAddr .inputArea .selectBox label {display: inline-block; width:120px; font-weight: bold; color:#445271;}
+        .addrInfo .contents .groupAddr .shppingAddr .inputArea .inputBox label[for=ext] {width:50px; text-align: center;}
+        .addrInfo .contents .groupAddr .shppingAddr .inputArea .inputBox input[id=phone] {width:120px;}
+        .addrInfo .contents .groupAddr .shppingAddr .inputArea .inputBox input[id=ext] {width:50px;}
+        /* 발송주소 끝 */
+
+        /* 도착주소 */
+        .addrInfo .contents .groupAddr .arrivalAddr {flex:1 1 0; margin:0 5px; /*outline: 1px dotted red;*/}
+        .addrInfo .contents .groupAddr .arrivalAddr .inputArea .inputBox label,
+        .addrInfo .contents .groupAddr .arrivalAddr .inputArea .selectBox label {display: inline-block; width:100px; font-weight: bold; color:#445271;}
+        .addrInfo .contents .groupAddr .arrivalAddr .inputArea .inputBox input[id=전화_수취인] {width:120px;}
+        .addrInfo .contents .groupAddr .arrivalAddr .inputArea .inputBox label[for=그외] {width:50px; text-align: center;}
+        .addrInfo .contents .groupAddr .arrivalAddr .inputArea .inputBox input[id=그외] {width:50px;}
+        /* 도착주소 끝 */
+
+
+        /* 저장하기 버튼*/
+        .addrInfo .contents .submit {margin-top:20px; padding-top: 30px; border-top:1px solid #ccc; text-align: center;}        
+        .addrInfo .contents .submit a {display: inline-block; padding: 5px 30px; width:50%; background: #4285f4; border-radius: 30px; color:#fff; cursor: pointer; transition: all .2s;}
+        .addrInfo .contents .submit a:hover {background: #fff; color:#4285f4; box-shadow: 0 0 1px 2px #4285f4;}
+
+
+
+
+
+/******************************* 마이페이지 > 주소정보 enter_1 *******************************/
+.enter_1 {}
+.enter_1 .contents {}
+.enter_1 .contents i.fa-question-circle {color:#cdd2db;}
+.enter_1 .contents .groupAddr {display: flex;  justify-content: space-between; flex-wrap: wrap;}
+
+/* 공통부분 */
+.enter_1 .contents .groupAddr h4 {padding: 5px; box-sizing: border-box; border-radius: 5px; background: #4285f4; color:#fff;}
+.enter_1 .contents .groupAddr .inputArea div {padding: 5px 0;}
+.enter_1 .contents .groupAddr .inputArea .inputBox input {padding:8px; width:370px; background: #fff;  border-radius: 5px; border:1px solid #ccc; box-sizing: border-box;}
+.enter_1 .contents .groupAddr .inputArea .selectBox select {padding:8px; background: #e7f5f9;  border-radius: 5px; border:1px solid #ccc;}
+/* 공통부분 끝 */
+
+/* 발송주소 시작 */
+.enter_1 .contents .groupAddr .shppingAddr {flex:1 1 0; margin:0 5px; padding: 10px;}
+.enter_1 .contents .groupAddr .shppingAddr:hover {border-radius: 10px; box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);}
+.enter_1 .contents .groupAddr .shppingAddr .inputArea {}
+.enter_1 .contents .groupAddr .shppingAddr .inputArea .inputBox label, 
+.enter_1 .contents .groupAddr .shppingAddr .inputArea .selectBox label {display: block; font-weight: bold; color:#445271;}
+.enter_1 .contents .groupAddr .shppingAddr .inputArea .inputBox.phone {display: flex; justify-content: space-between;}
+.enter_1 .contents .groupAddr .shppingAddr .inputArea .inputBox.phone .num_1 input {width:250px;}
+.enter_1 .contents .groupAddr .shppingAddr .inputArea .inputBox.phone .num_2 input {width:100px;}
+.enter_1 .contents .groupAddr .shppingAddr .inputArea .selectBox select {width:98%;}
+/* 발송주소 끝 */
+
+/* 도착주소 */
+.enter_1 .contents .groupAddr .arrivalAddr {flex:1 1 0; margin:0 5px; padding:10px;}
+.enter_1 .contents .groupAddr .arrivalAddr:hover {border-radius: 10px; box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);}
+.enter_1 .contents .groupAddr .arrivalAddr .inputArea .inputBox label,
+.enter_1 .contents .groupAddr .arrivalAddr .inputArea .selectBox label {display: block; width:100px; font-weight: bold; color:#445271;}
+.enter_1 .contents .groupAddr .arrivalAddr .inputArea .inputBox.phone {display: flex; justify-content: space-between;}
+.enter_1 .contents .groupAddr .arrivalAddr .inputArea .inputBox.phone .num_1 input {width:250px;}
+.enter_1 .contents .groupAddr .arrivalAddr .inputArea .inputBox.phone .num_2 input {width:100px;}
+.enter_1 .contents .groupAddr .arrivalAddr .inputArea .selectBox select {width:98%;}
+/* 도착주소 끝 */
+
+
+/* 저장하기 버튼*/
+.enter_1 .contents .submit {margin-top:20px; padding-top: 30px; border-top:1px solid #ccc; text-align: center;}        
+.enter_1 .contents .submit a {display: inline-block; padding: 5px 30px; background: #fff; border-radius: 30px; border: 1px solid #888; cursor: pointer; transition: all .2s;}
+.enter_1 .contents .submit a:hover {background: #000; color:#fff;}
+
+/******************************* 마이페이지 > 주소정보 enter_2 *******************************/
+.enter_2 {}
+.enter_2 .contents {}
+.enter_2 .contents .title2th {border-bottom: 1px solid #ccc; }
+.enter_2 .contents i.fa-question-circle {color:#cdd2db;}
+.enter_2 .contents .groupAddr {display: flex;  justify-content: space-between; flex-wrap: wrap;}
+
+/* 공통부분 */
+.enter_2 .contents .groupAddr h4 {margin-bottom: 20px; padding: 5px; box-sizing: border-box; border-radius: 5px; background: #4285f4; text-align: center; color:#fff;}
+.enter_2 .contents .groupAddr .inputArea div {padding: 5px 0;}
+.enter_2 .contents .groupAddr .inputArea .inputBox {margin: 5px 0; padding:8px; width:100%; background: #fff;  border-radius: 5px; border:1px solid #ccc; box-sizing: border-box;}
+.enter_2 .contents .groupAddr .inputArea .inputBox:hover {border:1px solid #4285f4; box-shadow: 0 0 0 1px rgba(66, 133, 244, 1);}
+.enter_2 .contents .groupAddr .inputArea .inputBox input {padding:8px 0; width:100%; background: #fff; border:none; outline: none; box-sizing: border-box;}
+.enter_2 .contents .groupAddr .inputArea .selectBox {margin: 5px 0; padding:8px; width:100%; background: #fff;  border-radius: 5px; border:1px solid #ccc; box-sizing: border-box;}
+.enter_2 .contents .groupAddr .inputArea .selectBox:hover {border:1px solid #4285f4; box-shadow: 0 0 0 1px rgba(66, 133, 244, 1); color:#4285f4; font-weight: bold;}
+.enter_2 .contents .groupAddr .inputArea .selectBox select {padding:8px 0; width:100%; background: #fff; border:none; outline: none; box-sizing: border-box;}
+
+/* 공통부분 끝 */
+
+/* 발송주소 시작 */
+.enter_2 .contents .groupAddr .shppingAddr {flex:1 1 0; margin:0 5px; padding: 10px;}
+.enter_2 .contents .groupAddr .shppingAddr .inputArea {}
+.enter_2 .contents .groupAddr .shppingAddr .inputArea .inputBox label, 
+.enter_2 .contents .groupAddr .shppingAddr .inputArea .selectBox label {display: block; transition: all .2s;}
+.enter_2 .contents .groupAddr .shppingAddr .inputArea .inputBox:hover label {color:#4285f4; font-weight: bold;}
+.enter_2 .contents .groupAddr .shppingAddr .inputArea .inputBox.phone {display: flex; justify-content: space-between;}
+.enter_2 .contents .groupAddr .shppingAddr .inputArea .inputBox.phone .num_1 input {width:250px;}
+.enter_2 .contents .groupAddr .shppingAddr .inputArea .inputBox.phone .num_2 input {width:100px;}
+/* 발송주소 끝 */
+
+/* 도착주소 */
+.enter_2 .contents .groupAddr .arrivalAddr {flex:1 1 0; margin:0 5px; padding:10px;}
+.enter_2 .contents .groupAddr .arrivalAddr .inputArea .inputBox {margin: 5px 0; padding:8px; width:100%; background: #fff;  border-radius: 5px; border:1px solid #ccc; box-sizing: border-box;}
+.enter_2 .contents .groupAddr .arrivalAddr .inputArea .inputBox:hover {border:1px solid #4285f4; box-shadow: 0 0 0 1px rgba(66, 133, 244, 1);}
+
+.enter_2 .contents .groupAddr .arrivalAddr .inputArea .inputBox label,
+.enter_2 .contents .groupAddr .arrivalAddr .inputArea .selectBox label {display: block; transition: all .2s;}
+.enter_2 .contents .groupAddr .arrivalAddr .inputArea .inputBox:hover label {color:#4285f4; font-weight: bold;}
+.enter_2 .contents .groupAddr .arrivalAddr .inputArea .inputBox.phone {display: flex; justify-content: space-between;}
+.enter_2 .contents .groupAddr .arrivalAddr .inputArea .inputBox.phone .num_1 input {width:250px;}
+.enter_2 .contents .groupAddr .arrivalAddr .inputArea .inputBox.phone .num_2 input {width:100px;}
+.enter_2 .contents .groupAddr .arrivalAddr .inputArea .selectBox select {width:98%;}
+/* 도착주소 끝 */
+
+
+/* 저장하기 버튼*/
+.enter_2 .contents .submit {margin-top:20px; padding-top: 30px; border-top:1px solid #ccc; text-align: center;}        
+.enter_2 .contents .submit a {display: inline-block; padding: 5px 30px; background: #fff; border-radius: 30px; border: 1px solid #888; cursor: pointer; transition: all .2s;}
+.enter_2 .contents .submit a:hover {background: #000; color:#fff;}
+
+/******************************* 마이페이지 > 발송정보 *******************************/
+
+.shipInfo {}
+
+/* 주문내역 */
+.shipInfo .contents h3.title2th {color:#000;}
+.shipInfo .contents .line {display: flex; justify-content: space-between; margin: 10px 0;}
+.shipInfo .contents .orderDetail {}
+.shipInfo .contents .orderDetail span:after {content: ","; display: inline;}
+.shipInfo .contents .orderDetail span:last-child:after {content: ""; display: inline;}
+#boxAdd {display: inline-block;}
+#boxAdd a {display: block; padding: 0px 15px; background: #4285f4; border-radius: 30px; border: 1px solid #4285f4; color: #fff; transition: all .2s;}
+
+#boxAdd a:hover {background: #fff; color:#4285f4;}
+
+/* 규격박스 주문상세 */
+.shipInfo .contents .orderList .step_style {position: relative; margin-bottom: 10px; padding: 10px; border:1px solid #4285f4; border-radius: 5px; transition: all 0.2s;}
+.shipInfo .contents .step_style:hover {box-shadow: 0 1px 2px 0 rgba(60,64,67,0.30), 0 2px 6px 2px rgba(60,64,67,0.15);}
+.shipInfo .contents .orderList .step_style .step_group {}
+.shipInfo .contents .orderList .step_style .step_group .step_title {display: inline-block; margin-right: 5px; padding: 5px 0; box-sizing: border-box; width:90px; border-radius: 5px; border:1px solid #dfe1e5; background: #f5f5f5; line-height: 0.7; text-align: center;}
+
+.shipInfo .contents .orderList .step_style .step_group .step_title img {display: inline-block; margin-bottom: 5px; width:44px;}
+.shipInfo .contents .orderList .step_style .step_group .step_title .step_txt1 {color:#2c65ff; font-size:13px;}
+.shipInfo .contents .orderList .step_style .step_group .step_title .step_txt2 {color:#000; font-size:11px;}
+
+.shipInfo .contents .orderList .step_style .step_list {display: inline-block; font-size: 14px;}
+.shipInfo .contents .orderList .step_style .step_list ul {}
+.shipInfo .contents .orderList .step_style .step_list ul li {display: inline-block; margin-right: 10px;}
+.shipInfo .contents .step_style .step_list ul li a .boxNum {display: inline-block; padding: 0 5px;  background: #999; border-radius:3px; font-size: 12px; color:#fff;}
+.shipInfo .contents .orderList .step_style .step_list ul li a b {color:#000;}
+.shipInfo .contents .orderList .step_style .step_list ul li .fa-print {color:#000;}
+.shipInfo .contents .orderList .step_style .step_list ul li .boxPhoto {position: relative; display: inline-block;}
+
+.shipInfo .contents .orderList .step_style .step_list ul li .boxPhoto .photoArea {display: inline-block;}
+.shipInfo .contents .orderList .step_style .step_list ul li .boxPhoto .photoArea .photoNum {display: inline-block; width: 20px; height:20px; border: 1px solid #999;  box-sizing: border-box; font-size: 12px;line-height: 20px;  text-align: center;}
+.shipInfo .contents .orderList .step_style .step_list ul li .boxPhoto .photoArea .photoNum a {display: block; transition: all .2s;}
+.shipInfo .contents .orderList .step_style .step_list ul li .boxPhoto .photoArea .photoNum:hover a {background: #000; color:#fff;}
+
+.shipInfo .contents .orderList .step_style .step_list ul li .boxPhoto .photoArea .boxView {display: none; position: absolute; right:0; top:25px; z-index: 2;}
+.shipInfo .contents .orderList .step_style .step_list ul li .boxPhoto .photoArea:hover .boxView {display: block;}
+.shipInfo .contents .orderList .step_style .step_list ul li .boxPhoto .photoArea .boxView img {width:300px; height:200px;}
+.shipInfo .contents .orderList .step_style .step_list ul li .boxPhoto .photoArea .photoNone {display: inline-block; width: 20px; height:20px; border: 1px solid #999;  box-sizing: border-box; background: #ff667a;  font-size: 12px; line-height: 20px; text-align: center; color:#fff;}
+
+/* 수정 및 삭제 아이콘  */
+.shipInfo .contents .step_style .step_descript {display: flex; position: absolute; top:15px; right:15px; text-align: right;}
+.shipInfo .contents .step_style .step_descript .step_icon {margin: 5px;}
+.shipInfo .contents .step_style .step_descript .step_icon a {position: relative;}
+.shipInfo .contents .step_style .step_descript .step_icon a .fas {padding: 5px; border-radius: 50%; font-size: 16px; color:#4b525c; background: #7d8590; transition: all 0.2s;}
+.shipInfo .contents .step_style:hover .step_descript .step_icon a .fas {background: #eee;}        
+
+
+.shipInfo .contents .step_style .step_descript .step_icon a .detail {display: none; position: absolute; left:50%; top:30px; transform: translate(-50%,0); padding: 3px 8px; background: #4b525c; font-size: 12px; color:#f9f9f9; transition: all 0.2s; text-align: center;}
+
+
+.shipInfo .contents .step_style .step_descript .step_icon a {display: block;}
+.shipInfo .contents .step_style .step_descript .step_icon a.modify {}
+.shipInfo .contents .step_style .step_descript .step_icon a.delete {}
+.shipInfo .contents .step_style .step_descript .step_icon .detail{display: none; width:60px;}   
+.shipInfo .contents .step_style .step_descript .step_icon:hover .fas + .detail{display: block;}
+
+
+.shipInfo .contents .orderList .step_style .step_list .toDo {margin-top: 5px;}
+.shipInfo .contents .orderList .step_style .step_list .toDo a {display: inline-block; margin: 5px; padding: 0 10px; background: #ffeaea; border-radius: 30px; border: 1px solid #ff667a; font-size: 0.9em; color: red; transition: all 0.2s}
+.shipInfo .contents .orderList .step_style .step_list .toDo a:hover {background: #fff;}
+
+
+
+/* 패키지 발송 날짜 선택*/
+.shipInfo .contents .dateGroup {margin-top: 30px; display: flex; padding: 15px; 10px; /*border-top:1px solid #888; border-bottom:1px solid #888;*/ justify-content: space-between; border-radius: 5px; background: #e3f2fd; border:1px solid #bbdefb;}
+.shipInfo .contents .dateGroup .shipSelect {}
+.shipInfo .contents .dateGroup .shipSelect div {display: inline-block; margin-right: 10px;}
+.shipInfo .contents .dateGroup .shipSelect .pickupDate {color:#000;}
+.shipInfo .contents .dateGroup .shipSelect .pickupDate .selectDate {padding: 0 5px; border:1px solid #ccc;}
+.shipInfo .contents .dateGroup .shipSelect .pickupDate .selectDate input {border:none;outline: none;  background: transparent;}
+.shipInfo .contents .dateGroup .shipSelect .pickform {}
+.shipInfo .contents .dateGroup .shipSelect .dropform {}
+
+.shipInfo .contents .dateGroup .conform {}
+.shipInfo .contents .dateGroup .conform a {display: block; padding: 0 15px; border-radius: 30px; border: 1px solid #4285f4; background: #4285f4; color: #fff;   transition: all .2s;}   
+.shipInfo .contents .dateGroup .conform:hover a {background: #fff; color: #4285f4;}
+
+/* 패키지 정보 저장하기*/
+.shipInfo .contents .save {margin-top: 30px; text-align: center;}
+
+.shipInfo .contents .save a {display: block; margin: 0 5px; padding: 5px 20px; border-radius: 30px;  background: #045ae9; font-size: 16px; color:#fff; transition: all .2s;}
+.shipInfo .contents .save a:hover {background: #fff; color:#045ae9; box-shadow: 0 0 1px 2px #4285f4;}
+
+/************************** 마이페이지 > 발송정보 > 발송목록  *******************************/
+.itemInfo {}
+
+/* 주문내역 */
+.itemInfo .contents h3.title2th {display: inline-block; margin-bottom:10px; color:#000;}
+.itemInfo .contents .totalItem {display: inline-block; margin-left: 15px; padding: 0 10px; border-radius: 5px;  background: #f1f1f1; }
+.itemInfo .contents .totalItem .count {}
+.itemInfo .contents section .group {margin-bottom: 30px; padding: 10px; border: 1px solid #4285f4; border-radius: 5px;}
+/*무게 부피입력 폼*/
+.itemInfo .contents section.weightForm h4 {margin-bottom: 10px; padding: 5px; background: #f1f1f1; color:#000;}
+.itemInfo .contents section.weightForm .formArea {display: flex; justify-content: space-between;}
+.itemInfo .contents section.weightForm .formArea div {}
+.itemInfo .contents section.weightForm .formArea h5 {font-weight: normal; font-size: 14px; }
+.itemInfo .contents section.weightForm .formArea .weight,
+.itemInfo .contents section.weightForm .formArea .dimention p {margin: 0 3px;}   
+/*무게*/
+.itemInfo .contents section.weightForm .formArea .weight {flex:1 1 0;}
+.itemInfo .contents section.weightForm .formArea .weight .inputArea {display: flex;}
+.itemInfo .contents section.weightForm .formArea .weight .inputArea .inputBox input {padding: 8px 0; width:100%; background: #fff; border-radius: 5px; border: 1px solid #ccc; text-align: center; box-sizing: border-box;}
+.itemInfo .contents section.weightForm .formArea .weight .inputArea p {}
+/*부피무게*/
+.itemInfo .contents section.weightForm .formArea .dimention {flex:1 1 0;}
+.itemInfo .contents section.weightForm .formArea .dimention .inputArea {display: flex;}
+.itemInfo .contents section.weightForm .formArea .dimention .inputArea .inputBox {}   
+.itemInfo .contents section.weightForm .formArea .dimention .inputArea .inputBox input {padding: 8px 0; width:100%; background: #fff; border-radius: 5px; border: 1px solid #ccc; text-align: center; box-sizing: border-box;}
+
+/* 아이템 1차선택 */
+.itemInfo .contents section.itemList h4 {}
+.itemInfo .contents section.itemList .group {}
+.itemInfo .contents section.itemList .group .selectItem h5 {font-size: 14px;}
+/* 메인 아이템 */
+.itemInfo .contents section.itemList .group .selectItem .items {display: flex; flex-wrap: nowrap; margin-bottom: 20px; overflow-x: visible; overflow-y: hidden;}
+.itemInfo .contents section.itemList .group .selectItem .items li {flex: 0 0 90px; margin: 2px;}
+.itemInfo .contents section.itemList .group .selectItem .items li a {display: block; height:90px; padding: 12px 0; border:1px solid #ccc; border-radius: 5px; text-align: center; box-sizing: border-box; transition: all .2s; box-sizing: border-box;}
+.itemInfo .contents section.itemList .group .selectItem .items li a.on {background: #0070ba; color:#fff;}
+.itemInfo .contents section.itemList .group .selectItem .items li a.on .mainName {}
+.itemInfo .contents section.itemList .group .selectItem .items li a.on:hover .mainName {color:#fff;}
+
+.itemInfo .contents section.itemList .group .selectItem .items li a:hover {background: #0070ba; color:#fff;}
+.itemInfo .contents section.itemList .group .selectItem .items li a img {}
+.itemInfo .contents section.itemList .group .selectItem .items li a .mainName {font-size: 12px; font-weight: 300;}
+/* 서브 아이템 */
+.itemInfo .contents section.itemList .group .selectItem .subItem {}
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList {display: flex; overflow-x: visible; overflow-y: hidden;}
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li {flex: 0 0 90px; margin: 2px; position: relative; border:1px solid #ccc; border-radius: 5px;}
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li .increase {display: block; height:90px; padding: 10px 0; text-align: center; box-sizing: border-box;}
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li .increase img {}
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li .increase .subName {font-size:12px; font-weight: 300;}
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li .decrease {position: absolute; left:5px; top:5px; z-index: 1;}
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li .decrease a {display: block; background: #0070ba; width:22px; height:22px; line-height: 20px; font-size: 40px; color:#fff; text-align: center;}
+
+
+/* 직접입력 */
+#direct {display: block;}
+#direct li {flex: none; border:none;}
+#direct li .inputAdd {display: flex; justify-content: space-between; margin-bottom: 10px;}
+#direct li .inputAdd .itemAdd {}
+#direct li .inputAdd .itemAdd a {display: block; padding: 0 5px; background: #f1f1f1; border:1px solid #ccc; border-radius: 5px; color:#000; transition: all 0.2s;}
+#direct li .inputAdd .itemAdd a:hover {background: #0070ba; border:1px solid #0070ba; color:#fff;}
+
+
+#direct li ul.goods {width:100%;}
+#direct li ul.goods li {display: flex; justify-content: space-between; margin-bottom: 5px;}
+
+#direct li ul.goods li .name {flex: 8 1 0; margin-right: 10px;}
+#direct li ul.goods li .name input {padding: 8px; width: 100%; background: #fff; border-radius: 5px; border: 1px solid #ccc; text-align: left; box-sizing: border-box;}
+#direct li ul.goods li .amount {flex: 2 1 0; margin-right: 10px;}
+#direct li ul.goods li .amount input {padding: 8px 0; width: 100%; background: #fff; border-radius: 5px;
+border: 1px solid #ccc; text-align: center; box-sizing: border-box;}
+#direct li ul.goods li .delete {flex: 1 1 0;}
+#direct li ul.goods li .delete a {display: block; padding: 2px 0; line-height: 2;  background: #fff; border-radius: 5px; border:1px solid #ccc; text-align: center; color: #4b525c; transition: all .2s;}
+#direct li ul.goods li .delete:hover a {background: #0070ba; color:#fff;}
+
+
+
+
+/*
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li ul.goods li div:not(:last-child) {margin-right: 10px;}
+
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li ul.goods li .name {flex:8 1 0;}
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li ul.goods li .name input {padding: 8px; width: 100%; background: #fff; border-radius: 5px; border: 1px solid #ccc; text-align: left;
+ box-sizing: border-box;}
+
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li ul.goods li .amount {flex:2 1 0;}
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li ul.goods li .amount input {text-align: center; padding: 8px 0; width: 100%; background: #fff; border-radius: 5px; border: 1px solid #ccc; text-align: center; box-sizing: border-box}
+
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li ul.goods li .delete {flex:1 1 0;}
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li ul.goods li .delete a {display: block; padding: 2px 0; border-radius: 5px; line-height: 2; background: #7d8590; text-align: center; color:#4b525c; transition: all .2s}
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li ul.goods li .delete:hover a {background: #eee;}
+
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li ul.goods li {display: flex; justify-content: space-between; margin-bottom: 5px;}
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li ul.goods li div:not(:last-child) {margin-right: 10px;}
+*/
+
+
+
+
+/* 패킹사진 등록하기 */
+.itemInfo .contents section.photoList {}
+.itemInfo .contents section.photoList ul.ex {display: flex; margin-bottom: 20px;}
+.itemInfo .contents section.photoList ul.ex li {position: relative; margin: 0 2px; text-align: center;}
+.itemInfo .contents section.photoList ul.ex li img {display: block; max-width:100%; border-radius: 5px;}
+.itemInfo .contents section.photoList ul.ex li .inPic {position: absolute; right:0px; top:-5px; font-size:26px; line-height: 1; color:yellow; text-shadow: 0 1px 3px #000; border-radius: 50%;}
+.itemInfo .contents section.photoList ul.ex li .txt {font-size: 13px;}
+
+.itemInfo .contents section.photoList ul.file {display: flex; margin-bottom: 20px;}
+.itemInfo .contents section.photoList ul.file li {position: relative; margin: 0 2px; border-radius: 5px; text-align: center;}
+.itemInfo .contents section.photoList ul.file li img {display: block; max-width:100%; }
+.itemInfo .contents section.photoList ul.file li p.del {position: absolute; right:0; top:0;}
+.itemInfo .contents section.photoList ul.file li p.del a {display: block; padding: 0 8px; background: #000; color:#fff; transition: all .2s;}
+.itemInfo .contents section.photoList ul.file li p.del:hover a {background: #fff; color:#000; box-shadow: 0 0 1px 1px #000;}
+/* 파일선택 */
+.itemInfo .contents section.photoList .group .save {}
+.itemInfo .contents section.photoList .group .save a {display: inline-block; width:50%; background: #fff; border:1px solid #0070ba; border-radius: 30px; text-align: center; color:#000; transition: all 0.2s;}
+.itemInfo .contents section.photoList .group .save a:hover  {background: #0070ba; color:#fff; }
+
+/*저장하기 버튼*/ 
+.itemInfo .contents .submit {margin-top: 30px; text-align: center;}
+.itemInfo .contents .submit a {display: inline-block; padding: 5px; 15px; width:50%; border-radius: 30px; border: 1px solid #0070ba; background: #0070ba; color: #fff; text-align: center; transition: all .2s;}
+
+
+/*********************************** 마이페이지 > 결제정보***********************************/
+.payInfo {}
+.payInfo .contents {}
+
+.payInfo .contents .payList {margin-top:10px;}
+.payInfo .contents .payList ul.tabs {display: flex;}
+.payInfo .contents .payList ul.tabs li {flex:1 1 0;}
+.payInfo .contents .payList ul.tabs li:nth-child(2) {margin:0 1px;}
+.payInfo .contents .payList ul.tabs li a {display: block; padding: 5px;text-align: center; background: #fff; border:1px solid #ccc; border-radius:10px 10px 0 0; color:#000;}
+.payInfo .contents .payList ul.tabs li .on {display: block; padding: 5px;text-align: center; background: #4285f4; border:1px solid #4285f4; border-radius:10px 10px 0 0; color:#fff;}
+.payInfo .contents .pay_style {padding: 15px; border: 1px solid #4285f4; border-radius: 0 0 10px 10px; 5px;}
+.payInfo .contents .payList .tabTable table {width:100%; border-collapse: collapse; border:1px solid #f5f5f5;}
+
+.payInfo .contents .payList .tabTable table tr.title th {padding:5px 0; background: #f1f1f1;}
+.payInfo .contents .payList .tabTable table tr.title td {padding:5px 0; background: #f1f1f1; color:#000;}
+.payInfo .contents .payList .tabTable table tr td {padding:5px 0; border:1px solid #f5f5f5; font-size: 13px; text-align: center;}
+.payInfo .contents .payList .tabTable table tr td.box {color:#4285f4;}
+.payInfo .contents .payList .tabTable table tr td.box a {border-bottom:1px solid #4285f4}
+.payInfo .contents .payList .tabTable table tr td.del {text-decoration: line-through;}
+.payInfo .contents .payList .tabTable table tr td.discount {color:red;}
+.payInfo .contents .payList .tabTable table tr td.total {color:#000;}
+.payInfo .contents .payList .tabTable table tr td.totalPrice {color:blue; font-weight: bold; font-size: 15px;}
+
+.payInfo .contents .payList .payment {display: flex; margin-top:20px; text-align: center;}
+.payInfo .contents .payList .payment a {flex:1 1 0; display: block; margin: 0 5px; padding: 5px 20px; border-radius: 30px;  background: #045ae9; font-size: 16px; color:#fff; transition: all .2s;}
+.payInfo .contents .payList .payment a:hover {background: #fff; color:#045ae9; box-shadow: 0 0 1px 2px #4285f4;}
+
+.payInfo .contents .payList .invoice {margin-top:20px; text-align: center;}
+.payInfo .contents .payList .invoice a {display: block; margin: 0 5px; padding: 5px 20px; border-radius: 30px;  background: #4285f4; font-size: 16px; color:#fff; transition: all .2s;}
+.payInfo .contents .payList .invoice a:hover {background: #fff; color:#045ae9; box-shadow: 0 0 1px 2px #4285f4;}
+
+
+
+/*********************************** 문의 채팅 ***********************************/
+#chat {position: fixed; bottom:20px; right:20px;}
+#chat .chatBtn {display: block; width:58px; height:58px; border-radius: 50%; background: #4285f4 url(../images/chat.png) no-repeat center center;}
+
+#chat .chatClose {display: block; width:58px; height:58px; border-radius: 50%; background: #4285f4 url(../images/chatClose.png) no-repeat center center;}
+
+#chatWin {display: none; opacity: 0; position: fixed; bottom: 80px; right:20px; width:300px; height:300px; background: yellow; z-index: 999;}
+
+
+

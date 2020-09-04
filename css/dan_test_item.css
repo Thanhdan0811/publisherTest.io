@@ -1,0 +1,102 @@
+.itemInfo .contents section.itemList .group .selectItem .subItem .subList li .decrease {
+    display: none;
+  }
+  
+  .showCount {
+      display: none;
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      font-size: 2.2rem;
+      font-weight: bold;
+      text-align: center;
+      color: black;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+  }
+  .itemInfo .contents section.itemList .group .selectItem .subItem .subList li .decrease {
+      z-index: 2;
+  }
+  .itemInfo .contents section.itemList .group .selectItem .items ,
+  .itemInfo .contents section.itemList .group .selectItem .subItem ul {
+    transition: all 0.5s ease-in-out;
+    /* overflow: hidden; */
+  }
+  @media screen and (max-width: 991px) {
+      #scrollToLeft, #scrollToRight, 
+      #scrollToLeftSub, #scrollToRightSub {
+        display: none !important;
+      }
+      .itemInfo .contents section.itemList .group .selectItem .items {
+        /* width: auto !important; */
+      }
+      .itemInfo .contents section.itemList .group .selectItem .items ,
+      .itemInfo .contents section.itemList .group .selectItem .subItem ul {
+        overflow-x: visible;
+        width: unset !important;
+      }
+      .itemInfo .contents section.itemList .group .selectItem .subItem .subList {
+        width: unset !important;
+        overflow-x: visible;
+      }
+  }
+  .itemInfo .contents section.itemList .group {
+      position: relative;
+  }
+  .itemInfo .contents section.itemList .group .selectItem{
+    /* position: relative; */
+      overflow: hidden;
+  }
+#scrollToLeft, #scrollToRight,#scrollToLeftSub, #scrollToRightSub {
+    padding: 0px 2px;
+    background-color: #86838380;
+    font-size: 2.5rem;
+    color: black;
+    z-index: 1;
+}
+#scrollToLeft {
+    position: absolute;
+    top: calc(36px + 8px);
+    left: 0;
+} 
+#scrollToLeftSub {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+} 
+
+/* FOR SUB ITEMS */
+#scrollToRight { 
+    position: absolute;
+    right: 0;
+    top: calc(36px + 8px);
+}
+
+#scrollToRightSub {
+  position: absolute;
+  right: 0;
+  bottom: 20px
+}
+
+.arrowSub, .arrow {
+  cursor: pointer;
+  opacity: 0;
+}
+.items:hover + .arrow {
+  opacity: 1;
+}
+.arrow:hover {
+  opacity: 1;
+}
+.subItem:hover + .arrowSub {
+  opacity: 1;
+}
+.arrowSub:hover {
+  opacity: 1;
+}
+

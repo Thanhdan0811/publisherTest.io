@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>발송목록 등록</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dan_test_item.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body class="itemInfo">
+
+<div class="wrap">
+    <!--공지사항 시작-->
+    <div class="bread"><a href="index.html">마이페이지</a> > <a href="mypage_2th.html">발송정보</a> > 발송목록</div>
+    <div class="mypage_notice">
+        <div class="notice_cont">
+            &#128681; <span style="color:red">이사화물신고서</span>에 등록되는 정보입니다.
+        </div>
+    </div>    
+    <!--공지사항 끝-->
+    
+    <div class="contents">  
+        <h3 class="title2th">발송 목록</h3>
+        <div class="totalItem">총 갯수 <span class="count">0</span> 개</div>
+        <section class="weightForm">
+            <h4>&#9202; 박스의 실제무게와 부피사이즈를 입력하세요.</h4>
+            <div class="group">            
+                <div class="formArea">
+                    <div class="weight">
+                        <h5>무게(Weight)</h5>
+                        <div class="inputArea">
+                            <div class="inputBox"><input type="number" name="item_goods_weight" id="item_goods_weight" value="33.00"></div>
+                            &nbsp; <p>KG</p>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div class="dimention">
+                        <h5>부피사이즈(Dimention)</h5>
+                        <div class="inputArea">
+                            <div class="inputBox"><input type="number" name="volume1" id="volume1" value="20"></div>
+                            <p>X</p>
+                            <div class="inputBox"><input type="number" name="volume2" id="volume2" value="20"></div>
+                            <p>X</p>
+                            <div class="inputBox"><input type="number" name="volume3" id="volume3" value="12"></div>
+                             &nbsp;<p>IN</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="itemList">
+            <h4>&#9997; 박스 안의 물품상세정보를 입력하세요.</h4>
+            <div class="group">
+                <div class="selectItem">
+                    <h5>&#128085; 아이템 선택</h5>
+                    <!-- 메인 아이템 -->
+                   
+                    <ul class="tabs items" data-tabgroup="first-tab-group">
+                        
+                        <!-- Add li for test -->
+                        <li>
+                            <a href="#clothing" class="on">
+                                <img src="images/activewear.png" alt="의류">
+                                <p class="mainName">Clothing</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#clothing" class="on">
+                                <img src="images/activewear.png" alt="의류">
+                                <p class="mainName">Clothing</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#clothing" class="on">
+                                <img src="images/activewear.png" alt="의류">
+                                <p class="mainName">Clothing</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#clothing" class="on">
+                                <img src="images/activewear.png" alt="의류">
+                                <p class="mainName">Clothing</p>
+                            </a>
+                        </li>
+                        <!-- Add li for test -->
+                        <li>
+                            <a href="#clothing" class="on">
+                                <img src="images/activewear.png" alt="의류">
+                                <p class="mainName">Clothing</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#shoes">
+                                <img src="images/activewear.png" alt="신발">
+                                <p class="mainName">Shoes</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bag">
+                                <img src="images/activewear.png" alt="가방">
+                                <p class="mainName">Bag</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#accessories">
+                                <img src="images/activewear.png" alt="악세사리">
+                                <p class="mainName">Accessories</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#cosmetics">
+                                 <img src="images/activewear.png" alt="화장품">
+                                <p class="mainName">Cosmetics</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#electronics">
+                                <img src="images/activewear.png" alt="전자제품">
+                                <p class="mainName">Electronics</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#stationery">
+                                <img src="images/activewear.png" alt="전자제품">
+                                <p class="mainName">Stationery</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#direct">
+                                <img src="images/activewear.png" alt="직접입력">
+                                <p class="mainName">직접 입력</p>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    <div class="arrow">
+                        <div id="scrollToLeft" class="arrowItem"><i class="fas fa-angle-left"></i></div>
+                        <div id="scrollToRight" class="arrowItem"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                    <!-- 서브 아이템 -->
+                    
+                    <div id="first-tab-group" class="tabgroup subItem">
+                        <ul id="clothing" class="subList">
+                                <li>
+                                    <a class="increase" href="#">
+                                        <img src="images/activewear.png" alt="스포츠웨어">
+                                        <p class="subName">Sportswear</p>
+                                    </a>
+                                    <div class="decrease"><a href="#">-</a></div>
+                                </li>
+                                <li>
+                                    <a class="increase" href="#">
+                                        <img src="images/activewear.png" alt="스포츠웨어">
+                                        <p class="subName">Sportswear</p>
+                                    </a>
+                                    <div class="decrease"><a href="#">-</a></div>
+                                </li>
+                                <li>
+                                    <a class="increase" href="#">
+                                        <img src="images/activewear.png" alt="스포츠웨어">
+                                        <p class="subName">Sportswear</p>
+                                    </a>
+                                    <div class="decrease"><a href="#">-</a></div>
+                                </li>
+                                <li>
+                                    <a class="increase" href="#">
+                                        <img src="images/activewear.png" alt="스포츠웨어">
+                                        <p class="subName">Sportswear</p>
+                                    </a>
+                                    <div class="decrease"><a href="#">-</a></div>
+                                </li>
+                                <li>
+                                    <a class="increase" href="#">
+                                        <img src="images/activewear.png" alt="스포츠웨어">
+                                        <p class="subName">Sportswear</p>
+                                    </a>
+                                    <div class="decrease"><a href="#">-</a></div>
+                                </li>
+                                <li>
+                                    <a class="increase" href="#">
+                                        <img src="images/activewear.png" alt="스포츠웨어">
+                                        <p class="subName">Sportswear</p>
+                                    </a>
+                                    <div class="decrease"><a href="#">-</a></div>
+                                </li>
+                                <li>
+                                    <a class="increase" href="#">
+                                        <img src="images/activewear.png" alt="스포츠웨어">
+                                        <p class="subName">Sportswear</p>
+                                    </a>
+                                    <div class="decrease"><a href="#">-</a></div>
+                                </li>
+                                <li>
+                                    <a class="increase" href="#">
+                                        <img src="images/activewear.png" alt="속옷">
+                                        <p class="subName">Underwear</p>
+                                    </a>
+                                    <div class="decrease"><a href="#">-</a></div>
+                                </li>
+                                 <li>
+                                    <a class="increase" href="#">
+                                        <img src="images/activewear.png" alt="자켓">
+                                        <p class="subName">Jacket</p>
+                                    </a>
+                                    <div class="decrease"><a href="#">-</a></div>
+                                </li>
+                                 <li>
+                                    <a class="increase" href="#">
+                                        <img src="images/activewear.png" alt="activewear.png">
+                                        <p class="subName">Pants</p>
+                                    </a>
+                                    <div class="decrease"><a href="#">-</a></div>
+                                </li>
+                                 <li>
+                                    <a class="increase" href="#">
+                                        <img src="images/activewear.png" alt="activewear.png">
+                                        <p class="subName">Socks</p>
+                                    </a>
+                                    <div class="decrease"><a href="#">-</a></div>
+                                </li>
+                                 <li>
+                                    <a class="increase" href="#">
+                                        <img src="images/activewear.png" alt="activewear.png">
+                                        <p class="subName">Sweater</p>
+                                    </a>
+                                    <div class="decrease"><a href="#">-</a></div>
+                                </li>
+                            </ul>
+                        <ul id="shoes" class="subList">
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Shoes</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Slippers</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Casual</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Boots</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                        </ul>
+                        <ul id="bag" class="subList">
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">BackPacks</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                             <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Shoulder</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Todd</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                        </ul>
+                        <ul id="accessories" class="subList">
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Sunglasses</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Belt</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Hat</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Gloves</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Muffler</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                        </ul>
+                        <ul id="cosmetics" class="subList">
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Cleanser</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Skincare</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Shampoo</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Body</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Cream</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                        </ul>
+                        <ul id="electronics" class="subList">
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">TV</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Laptop</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Monitor</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Electronics</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                        </ul>
+                        <ul id="stationery" class="subList">
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Book</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Note</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                            <li>
+                                <a class="increase" href="#">
+                                    <img src="images/activewear.png" alt="activewear.png">
+                                    <p class="subName">Pensil</p>
+                                </a>
+                                <div class="decrease"><a href="#">-</a></div>
+                            </li>
+                        </ul>
+                        <!--직접입력-->
+                        <ul id="direct" class="subList">
+                            <li>
+                                <div class="inputAdd">
+                                    <div class="title">&#128221; 영문으로 작성해주세요.</div>
+                                    <div class="itemAdd"><a href="#">+ 입력 추가</a></div>
+                                </div>
+                                <ul class="goods">
+                                    <li>
+                                        <div class="name">
+                                        <input type="text" name="item_goods" class="item_goods" value="" placeholder="Items name">
+                                        </div>
+                                        <div class="amount">
+                                        <input type="text" name="cnt" class="item_cnt" value="" placeholder="amount">
+                                        </div>
+                                        <div class="delete"><a href="#"><i class="fas fa-trash"></i></a></div>
+                                    </li>                        
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="arrowSub">
+                        <div id="scrollToLeftSub" class="arrowSubItem"><i class="fas fa-angle-left"></i></div>
+                        <div id="scrollToRightSub" class="arrowSubItem"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
+        </section>
+        <section class="photoList">
+            <h4>&#9202; 패킹사진을 입력하세요.</h4>            
+                <div class="group">
+                    아래와 같이 패킹사진을 등록하세요.
+                    <ul class="ex">  
+                    <li>
+                        <img src="https://iloveuc.com/mypage/img/boxguide_3.jpg">
+                        <p class="inPic">❶</p>
+                        <p class="txt">박스풀샷</p>
+                    </li>
+                    <li>
+                        <img src="https://iloveuc.com/mypage/img/boxguide_4.jpg">
+                        <p class="inPic">❷</p>
+                        <p class="txt">박스레이블</p>
+                    </li>
+                    <li>
+                        <img src="https://iloveuc.com/mypage/img/boxguide_2.jpg">
+                        <p class="inPic">❸</p>
+                        <p class="txt">내부레이블</p>
+                    </li>
+                    <li>
+                        <img src="https://iloveuc.com/mypage/img/boxguide_1.jpg">
+                        <p class="inPic">❹</p>
+                        <p class="txt">내부상단</p>
+                    </li>
+                    <li>
+                        <img src="https://iloveuc.com/mypage/img/boxguide_5.jpg">
+                        <p class="inPic">❺</p>
+                        <p class="txt">박스전체</p>
+                    </li>
+                </ul>
+
+                <ul class="file">  
+                    <li><img src="http://placehold.it/106x88">
+                        <p class="del"><a href="#"><i class="fas fa-times"></i></a></p>
+                    </li>
+                    <li><img src="http://placehold.it/106x88">
+                        <p class="del"><a href="#"><i class="fas fa-times"></i></a></p>
+                    </li>
+                    <li><img src="http://placehold.it/106x88">
+                        <p class="del"><a href="#"><i class="fas fa-times"></i></a></p>
+                    </li>
+                    <li><img src="http://placehold.it/106x88">
+                        <p class="del"><a href="#"><i class="fas fa-times"></i></a></p>
+                    </li>
+                    <li><img src="http://placehold.it/106x88">
+                        <p class="del"><a href="#"><i class="fas fa-times"></i></a></p>
+                    </li>
+                    <li><img src="http://placehold.it/106x88">
+                        <p class="del"><a href="#"><i class="fas fa-times"></i></a></p>
+                    </li>                    
+                </ul>
+                <div class="save"><a href="#">파일 선택</a></div>
+            </div>
+        </section>
+        <!--저장하기 버튼-->
+        <div class="submit"><a href="#">저장하기</a></div>
+    </div>
+</div>
+
+
+    
+<!--탭구현-->
+<script>
+    $(function(){
+        $('.tabgroup > ul').hide();
+        // $('.tabgroup > ul:first-of-type').show();
+        $('.tabs a').click(function(e){
+          e.preventDefault();
+            var $this = $(this),
+                tabgroup = '#'+$this.parents('.tabs').data('tabgroup'),
+                others = $this.closest('li').siblings().children('a'),
+                target = $this.attr('href');
+            others.removeClass('on');
+            $this.addClass('on');
+            $(tabgroup).children('ul').hide();
+            $(target).show();
+        })
+        
+        /**************************************************************/
+        /***********Dis play count when user choose a item************/
+        /**************************************************************/
+        // Get element 
+        let decreaseItem = document.querySelectorAll(".subList li .decrease");
+        let itemLi = document.querySelectorAll(".subList:not(:last-child) li");
+        console.log("itemLi, ", itemLi);
+        // each li of item we add 1 div with class showCount for display number of item
+        itemLi.forEach(item => {
+           let itemName = item.querySelector("a p").innerHTML;
+           item.itemCount = { nameItem: itemName , count : 0 };
+           console.log("item count " , item.itemCount.count);
+           let div = document.createElement("div");
+           div.classList.add("showCount");
+           item.append(div);
+        });
+        // we add event click to increase for li instead the div with class increase
+        // we create an object with 2 properties : item and count for item
+        //  when click display : block for div with class showCount and show div with class decrease
+        // increase count of item
+        itemLi.forEach(item => {
+           let showCount = item.querySelector("div[class='showCount']");
+           item.addEventListener("click", ()=>{
+               item.itemCount.count++;
+               console.log("object", item.itemCount.count);
+               if(item.itemCount.count !== 0) {
+                    item.querySelector(".decrease").style.display = "block";
+                    item.querySelector("img").style.opacity = "0.3";
+                    showCount.style.display = "block";
+                    showCount.innerHTML = `${item.itemCount.count}`;
+               } 
+           })
+        });
+        // we add event click for div with class decrease
+        // when property count === 0 we hide the div decrease
+        decreaseItem.forEach(item => {
+            let showCount = item.parentElement.querySelector("div[class='showCount']"); 
+            item.addEventListener("click", (event)=>{
+                event.stopPropagation(); // stop event click in li element
+                // check if the count property is already === 0
+                if(item.parentElement.itemCount.count == 0) {  
+                    item.previousElementSibling.querySelector("img").style.opacity = "";
+                    item.style.display = "";
+                    return;
+                }
+                item.parentElement.itemCount.count--;
+                // check count property and process
+                if(item.parentElement.itemCount.count === 0) {
+                    showCount.style.display = "";
+                    item.style.display = "";
+                    item.previousElementSibling.querySelector("img").style.opacity = "";
+                    return ;
+                } else {
+                    showCount.style.display = "block";
+                    showCount.innerHTML = `${item.parentElement.itemCount.count}`;
+                }
+            })
+        });
+        /*********************************/
+        /******Add field items name*******/
+        /*********************************/
+        let itemAdd = document.querySelector(".itemAdd");
+        itemAdd.onclick = addItem;
+        function addItem() {
+            let ulGoods = document.getElementById("direct").querySelector(".goods");
+            let fieldToAdd = ulGoods.querySelector("li").cloneNode(true);
+            ulGoods.append(fieldToAdd);
+        }
+        
+        /**************************************************************/
+        /***********Show hide arrow if out of area in items************/
+        /**************************************************************/
+        let widthItems = document.querySelector(".group .selectItem .items");
+        let widthWrapItems = document.querySelector(".group .selectItem");
+        let arrowLeft = document.getElementById("scrollToLeft");
+        let arrowRight = document.getElementById("scrollToRight");
+        let limitEdge = widthItems.scrollWidth - widthWrapItems.offsetWidth;
+        let offsetShift = 0;
+        // assignment
+        widthItems.style.width = widthItems.scrollWidth + "px";
+        arrowRight.onclick = scrollToRight;
+        arrowLeft.onclick = scrollToLeft; 
+        // check to show arrow
+        if(widthItems.scrollWidth <= widthWrapItems.offsetWidth) {
+            document.getElementById("scrollToLeft").style.display = "none";
+            document.getElementById("scrollToRight").style.display = "none";
+        } else {
+            document.getElementById("scrollToLeft").style.display = "";
+            document.getElementById("scrollToRight").style.display = "";
+        }
+        if(offsetShift === 0) document.getElementById("scrollToLeft").style.opacity = "0.3";
+        // function 
+        function scrollToRight() {
+            offsetShift += widthItems.querySelector("li").offsetWidth;
+            document.getElementById("scrollToLeft").style.opacity = "";
+            if(offsetShift >= limitEdge) {
+                offsetShift = limitEdge;
+                document.getElementById("scrollToRight").style.opacity = "0.3";
+            }
+            widthItems.style.transform = `translateX(-${offsetShift}px)`;
+            
+        }
+        function scrollToLeft() {   
+            offsetShift -= widthItems.querySelector("li").offsetWidth;
+            document.getElementById("scrollToRight").style.opacity= "";
+            if(offsetShift <= 0) {
+                offsetShift = 0;
+                document.getElementById("scrollToLeft").style.opacity = "0.3";
+            }
+            widthItems.style.transform = `translateX(-${offsetShift}px)`;
+            console.log("offsetShift" , offsetShift);
+        }
+        
+        /**************************************************************/
+        /*********Show hide arrow if out of area in Subitems **********/
+        /**************************************************************/ 
+        let ktraOn = document.querySelectorAll(".tabs a");
+        ktraOn.forEach( (element) => {
+            element.addEventListener("click", ()=>{
+                let widthSubItems;
+                let limitEdgeSub;
+                let offsetShiftSub;
+                let arrowLeftSub = document.getElementById("scrollToLeftSub");
+                let arrowRightSub = document.getElementById("scrollToRightSub");
+                // asignment
+                widthSubItems = document.querySelector(`.group .selectItem .subItem ul${element.getAttribute('href')}`);
+                limitEdgeSub = widthSubItems.scrollWidth - widthWrapItems.offsetWidth;
+                widthSubItems.style.width = widthSubItems.scrollWidth + "px";
+                offsetShiftSub = 0;
+                widthSubItems.style.transform = `translateX(-${0}px)`;
+                arrowRightSub.onclick = scrollToRightSubitem;
+                arrowLeftSub.onclick  = scrollToDirectLeftSubitem; 
+                // Check to show arrow
+                if(widthSubItems.scrollWidth <= widthWrapItems.offsetWidth) {
+                    document.getElementById("scrollToLeftSub").style.display = "none";
+                    document.getElementById("scrollToRightSub").style.display = "none";
+                } else {
+                    document.getElementById("scrollToLeftSub").style.display = "";
+                    document.getElementById("scrollToRightSub").style.display = "";
+                }
+                if(offsetShiftSub === 0) document.getElementById("scrollToLeftSub").style.opacity = "0.3";
+                ////// function
+                function scrollToRightSubitem() {
+                    console.log("ákdajshdhkasd");
+                    offsetShiftSub += widthSubItems.querySelector("li").offsetWidth;
+                    document.getElementById("scrollToLeftSub").style.opacity = "";
+                    if(offsetShiftSub >= limitEdgeSub) {
+                        offsetShiftSub = limitEdgeSub;
+                        document.getElementById("scrollToRightSub").style.opacity = "0.3";
+                    }
+                    widthSubItems.style.transform = `translateX(-${offsetShiftSub}px)`;
+                    
+                }
+                function scrollToDirectLeftSubitem() {   
+                    offsetShiftSub -= widthSubItems.querySelector("li").offsetWidth;
+                    document.getElementById("scrollToRightSub").style.opacity = "";
+                    if(offsetShiftSub <= 0) {
+                        offsetShiftSub = 0;
+                        document.getElementById("scrollToLeftSub").style.opacity = "0.3";
+                    }
+                    widthSubItems.style.transform = `translateX(-${offsetShiftSub}px)`;
+                    console.log("offsetShift" , offsetShiftSub);
+                }
+            });
+        })
+        // click first item default 
+        document.querySelector(".tabs li:first-of-type a").click();
+        
+        /******************************/
+        /*********Responsive **********/
+        /******************************/ 
+        window.onresize = responsive ;
+        function responsive() {
+            // if(window.innerWidth <= 991) {
+                let widthSubItems = document.querySelector(`.group .selectItem .subItem ul`);
+                widthSubItems.style.transform = `translateX(0px)`;
+                widthItems.style.transform = `translateX(0px)`;
+            // }
+        } 
+        // responsive
+    });
+</script>
+
+
+    
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+.addrInfo .contents .groupAddr  h4 span {
+    font-size: 1rem;
+    margin-right: 5px;
+    display: none;
+}
+/* .addrInfo .contents .groupAddr .arrivalAddr h4 span {
+    display: none;
+} */
+@media screen and (max-width: 599px) {
+    .shppingAddr .inputArea {
+    }
+
+    .arrivalAddr > .inputArea {
+        display: none;
+    }
+
+    .addrInfo .contents .groupAddr h4 span {
+        display: inline-block;
+    }
+    .addrInfo .contents .groupAddr .arrivalAddr {
+        flex: 1 1 100%;
+    }
+    .addrInfo .contents .groupAddr .shppingAddr {
+        flex:1 1 100%;
+    }
+}
