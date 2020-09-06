@@ -646,7 +646,7 @@
                 offsetShiftSub = 0;
                 widthSubItems.style.transform = `translateX(-${0}px)`;
                 arrowRightSub.onclick = scrollToRightSubitem;
-                arrowLeftSub.onclick  = scrollToDirectLeftSubitem; 
+                arrowLeftSub.onclick  = scrollToLeftSubitem; 
                 // Check to show arrow
                 if(widthSubItems.scrollWidth <= widthWrapItems.offsetWidth) {
                     document.getElementById("scrollToLeftSub").style.display = "none";
@@ -668,7 +668,7 @@
                     widthSubItems.style.transform = `translateX(-${offsetShiftSub}px)`;
                     
                 }
-                function scrollToDirectLeftSubitem() {   
+                function scrollToLeftSubitem() {   
                     offsetShiftSub -= widthSubItems.querySelector("li").offsetWidth;
                     document.getElementById("scrollToRightSub").style.opacity = "";
                     if(offsetShiftSub <= 0) {
